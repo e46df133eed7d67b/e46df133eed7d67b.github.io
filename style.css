@@ -163,6 +163,10 @@ nav a:hover {
   text-decoration: underline;
 }
 
+.mobile-nav-label {
+  display: none;
+}
+
 /* READING CONTROLS: visible text-size slider and direct light/dark toggle. */
 .reading-controls {
   position: absolute;
@@ -589,8 +593,9 @@ footer .footer-inner {
 /* PHONES: content stacks vertically */
 @media(max-width:560px) {
   .reading-controls {
-    top: 54px;
-    right: 14px;
+    top: 50px;
+    right: 18px;
+    gap: 4px;
   }
 
   .sidebar .name {
@@ -598,7 +603,57 @@ footer .footer-inner {
   }
 
   .discipline {
-    margin-bottom: 30px;
+    margin: 4px 0 20px;
+  }
+
+  .sidebar {
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+
+  .text-size-control {
+    gap: 4px;
+  }
+
+  .text-size-control input {
+    width: 56px;
+  }
+
+  .appearance-control svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  nav {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    column-gap: clamp(4px,1.5vw,8px);
+  }
+
+  nav a {
+    flex: 0 0 auto;
+    font-size: clamp(.75rem,3.6vw,.8125rem);
+    white-space: nowrap;
+  }
+
+  .desktop-nav-label {
+    display: none;
+  }
+
+  .mobile-nav-label {
+    display: inline;
+  }
+
+  /* Hide the homepage title visually, retaining its accessible heading. */
+  .home-heading {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 
   .main {
@@ -610,7 +665,7 @@ footer .footer-inner {
   }
 
   .site {
-    padding: 26px 22px 24px;
+    padding: 20px 22px 24px;
   }
 
   .home-top {
@@ -620,11 +675,16 @@ footer .footer-inner {
   }
 
   .portrait {
-    width: 180px;
+    width: 100%;
   }
 
   .home-top figure {
-    max-width: 230px;
+    width: 75%;
+    max-width: 100%;
+  }
+
+  .home-top figcaption {
+    margin-top: 8px;
   }
 
   .index-row {
