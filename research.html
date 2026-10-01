@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Andrew L Smith — Philosophy</title>
+    <title>Research — Andrew L Smith</title>
     <meta name="description" content="Andrew L Smith. Philosophy, ethics, Kant, and the history of philosophy.">
     <!-- Apply the saved appearance before displaying the page. -->
     <script src="theme.js"></script>
@@ -47,8 +47,8 @@
 
         <!-- Keep aria-current="page" on this page's navigation link only. -->
         <nav aria-label="Main navigation">
-          <a href="index.html" aria-current="page">Home</a>
-          <a href="research.html">Research</a>
+          <a href="index.html">Home</a>
+          <a href="research.html" aria-current="page">Research</a>
           <a href="teaching.html">Teaching</a>
           <a href="cv.html">CV</a>
           <a href="photography.html">Photography</a>
@@ -58,41 +58,53 @@
 
       <!-- PAGE CONTENT: edit the text and links in this section. See ../EDITING.md for examples. -->
       <main id="main" class="main">
-        <h1>Home</h1>
-        <div class="home-top">
-          <div class="intro">
-            <p>
-              Welcome. I work on ethics, the philosophy of Immanuel Kant—especially his practical philosophy—and the history of philosophy.
-            </p>
-            <p>
-              I received my PhD in philosophy from the <a href="https://philosophy.illinois.edu/">University of Illinois Urbana-Champaign</a> in August 2026. My dissertation is titled <em>A Puzzle of Human Moral Identity</em>.
-            </p>
-            <p>
-              You can find my papers under <a href="research.html">Research</a>, and further details about my academic background in my <a href="cv.html">CV</a>.
-            </p>
-          </div>
+        <h1>Research</h1>
+        <div class="prose">
+          <p>
+            My interests are in ethics, Kant’s philosophy—especially his practical philosophy—and the history of philosophy.
+          </p>
 
-          <!-- HOMEPAGE PORTRAIT: change src to a file in assets/ and update alt and the caption. -->
-          <figure>
-            <img class="portrait" src="assets/portrait.jpg" width="220" height="220" alt="Self-portrait of Andrew L Smith in front of bookshelves">
-            <figcaption>Self-portrait<br>Nikon D810, Nikkor 28mm</figcaption>
-          </figure>
-        </div>
+          <!-- CONTENT SECTION: the heading ID matches aria-labelledby on this section. -->
+          <section class="section" aria-labelledby="publications">
+            <h2 id="publications">Publications</h2>
 
-        <!-- HOMEPAGE SECTION LINKS: edit the descriptions below. -->
-        <div class="home-index">
-          <div class="index-row">
-            <a href="research.html">Research</a>
-            <p>
-              Publications, works in progress, and dissertation.
+            <!-- PAPER ENTRY: to add a paper, copy this entire article block, including its closing tag. -->
+            <article class="paper">
+              <h3><a href="assets/ideal-of-beauty.pdf">Why Must There Be an Ideal of Beauty?</a></h3>
+              <p>
+                <em>Proceedings of the 14th International Kant-Congress: Kant’s Project of Enlightenment</em>, edited by Christoph Horn and Rainer Schaefer. Berlin: De Gruyter.
+              </p>
+              <p class="meta">
+                Forthcoming · <a href="assets/ideal-of-beauty.pdf">Read paper (PDF)</a>
+              </p>
+            </article>
+          </section>
+
+          <!-- CONTENT SECTION: the heading ID matches aria-labelledby on this section. -->
+          <section class="section" aria-labelledby="progress">
+            <h2 id="progress">Works in progress</h2>
+            <ul class="plain-list">
+              <li>Williams Contra Nietzsche in “The Human Prejudice”</li>
+              <li>A Note on a Common Error in Translating BGE 32</li>
+            </ul>
+            <p class="note">
+              Drafts are available <a href="mailto:alsmit10@illinois.edu?subject=Paper%20request">upon request</a>.
             </p>
-          </div>
-          <div class="index-row">
-            <a href="teaching.html">Teaching</a>
-            <p>
-              Past courses and selected syllabuses.
-            </p>
-          </div>
+          </section>
+
+          <!-- CONTENT SECTION: the heading ID matches aria-labelledby on this section. -->
+          <section class="section" aria-labelledby="dissertation">
+            <h2 id="dissertation">Dissertation</h2>
+
+            <!-- PAPER ENTRY: to add a paper, copy this entire article block, including its closing tag. -->
+            <article class="paper">
+              <h3><a href="assets/dissertation.pdf">A Puzzle of Human Moral Identity</a></h3>
+              <p class="meta">
+                PhD dissertation, University of Illinois Urbana-Champaign<br>August 2026
+              </p>
+              <a class="download" href="assets/dissertation.pdf">Read dissertation (PDF)</a>
+            </article>
+          </section>
         </div>
 
         <!-- SHARED FOOTER: repeat any name or email changes in all six HTML files. -->
