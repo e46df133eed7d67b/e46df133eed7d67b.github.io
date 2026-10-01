@@ -6,11 +6,14 @@ or remotely hosted images are used.
 
 ## Publishing and editing
 
-GitHub Pages currently publishes the **root of `main`** at
-<https://e46df133eed7d67b.github.io/>. The ZIP's `dist/` contents are placed directly
-at that root: the homepage is `index.html`, not `dist/index.html`.
-No custom domain is configured in Pages, and no `CNAME` or deployment workflow
-exists. This integration does not change Pages settings or DNS.
+The canonical public URL is <https://asmith.be/>. GitHub Pages publishes the
+**root of `main`** using branch publishing. The root `CNAME` contains `asmith.be`,
+and HTTPS is enforced in Pages. The GitHub Pages hostname redirects to the custom
+domain. No checked-in deployment workflow or build step is needed.
+
+The ZIP's `dist/` contents are placed directly at that root: the homepage is
+`index.html`, not `dist/index.html`. Domain and DNS settings are managed separately;
+repository maintenance must preserve `CNAME` and must not change DNS.
 
 - Edit `index.html`, `research.html`, `teaching.html`, `cv.html`,
   `photography.html`, and `contact.html` directly.
@@ -26,8 +29,22 @@ homepage and compatibility pages. The prototype HTML is now the source of truth.
 
 Navigation, downloads, and the portrait work without JavaScript. The appearance
 and text-size controls store preferences only in the visitor's browser.
-Relative URLs work at the repository Pages root and at a future custom-domain
-root without adding a domain-specific base URL.
+Relative page and asset URLs work at the custom-domain root and remain compatible
+with GitHub Pages hosting. They do not need a domain-specific `<base>` element.
+
+## Canonical URLs and discovery
+
+Each of the six public pages declares a canonical URL and an Open Graph URL on
+`https://asmith.be`. The homepage canonical is `/`, including when opened as
+`/index.html`. The other canonical paths use their existing `.html` filenames.
+Compatibility pages declare the canonical destination while retaining their
+relative redirects and fallback links.
+
+`sitemap.xml` lists only these six canonical URLs; `robots.txt` points to
+`https://asmith.be/sitemap.xml` and permits crawling. When adding or renaming a
+page, keep its canonical metadata, Open Graph URL, and sitemap entry aligned.
+The archived `_src/` generator is not part of publishing and has no base URL or
+hostname configuration.
 
 ## Existing URL compatibility
 
@@ -55,7 +72,7 @@ All five existing PDF files under `/s/` are preserved byte for byte:
 The prototype also includes its own PDF filenames under `/assets/`; those links
 are retained. The existing `.nojekyll` is preserved.
 
-## Review before merging or switching a domain
+## Content review notes
 
 The prototype's wording, layout, photographs, and credits are retained. Review:
 
@@ -73,6 +90,6 @@ than an embedded gallery. The prototype includes berries, petal, and rainfall
 image files that are not displayed by its pages. The previous curated photographs
 and credits remain in the archived source and image files.
 
-Merging this PR into `main` will allow the existing Pages configuration to publish
-it. Review the PR first. Any later custom-domain setup and DNS switch are separate
-steps; neither is performed here.
+Changes merged into `main` are published by the existing GitHub Pages configuration
+at `https://asmith.be/`. Review changes in a pull request before merging. DNS changes
+are outside repository maintenance.

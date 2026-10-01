@@ -30,6 +30,20 @@ All page files are at the repository root.
 
 Look for `PAGE CONTENT` in an HTML file to find its main editable section. Comments beginning `<!--` explain the structure and do not appear on the website. HTML describes the content; CSS controls its appearance.
 
+## Canonical domain and URL metadata
+
+The canonical public URL is `https://asmith.be/`, hosted by GitHub Pages from the
+root of `main`. Preserve the root `CNAME` file, which contains `asmith.be`.
+
+Each page's head includes a `rel="canonical"` link and Open Graph URL metadata.
+The homepage uses `https://asmith.be/`; other pages use their `.html` paths. Keep
+these values and `sitemap.xml` aligned if a page is added or renamed. Compatibility
+pages point their canonical links to the corresponding current page.
+`robots.txt` references `https://asmith.be/sitemap.xml`.
+
+Keep navigation and asset links relative. No domain-specific `<base>` element,
+framework configuration, or DNS change is needed for ordinary repository edits.
+
 ## Change text
 
 A paragraph looks like this:
@@ -146,6 +160,6 @@ When opening HTML files directly from disk, some browsers do not share saved pre
 
 ## Publishing later
 
-The six root HTML files and their shared CSS, JavaScript, favicon, and assets are the complete website. GitHub Pages publishes them from the root of `main`. Keep the HTML files, `style.css`, `theme.js`, `favicon.svg`, and `assets/` together. The `.openai` folder is reserved for the Sites preview and is not needed for manual editing or GitHub Pages.
+The six root HTML files and their shared CSS, JavaScript, favicon, and assets are the complete website. GitHub Pages publishes them at `https://asmith.be/` from the root of `main`. Keep the HTML files, `style.css`, `theme.js`, `favicon.svg`, and `assets/` together. The `.openai` folder is reserved for the Sites preview and is not needed for manual editing or GitHub Pages.
 
 Saving a local file updates your local preview. Submit edits on a branch and review the pull request before merging into `main`; the existing Pages configuration publishes `main`. Keep the compatibility directories and existing `/s/` PDFs. See README.md for the publishing configuration and legacy-source warning.
