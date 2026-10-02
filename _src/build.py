@@ -5,6 +5,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = Path(__file__).resolve().parent
+
+# The prototype root files supersede this archived generator.
+if (ROOT / "theme.js").is_file():
+    raise SystemExit(
+        "This generator is archived and will not overwrite the current site. "
+        "Edit the root HTML files directly; see README.md and EDITING.md."
+    )
 LAYOUT = (SOURCE / "layout.html").read_text(encoding="utf-8")
 
 PAGES = [
