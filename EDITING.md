@@ -110,7 +110,14 @@ Each page contains its own header and footer so that navigation works directly i
 
 If you rename a navigation item, add a page, or change your name or footer email, make that same change in all six HTML files. Your editor's search across the folder can help. Keep `aria-current="page"` only on the navigation link for the page being edited; it marks the current page visually and for screen readers.
 
-To add a page, copy an existing HTML file, change its `<title>` and `<h1>`, replace the main content, and update the navigation in every page.
+The Photography link has separate desktop and mobile label spans and an explicit
+accessible name. If renaming it, keep all three consistent.
+
+To add a page, copy an existing HTML file, change its `<title>`, `<h1>`, description
+and Open Graph title/description, replace the main content, and update the navigation
+in every page. Remove `class="home-heading"` from the heading of any new non-home
+page; that class hides only the homepage heading on phones. Update the canonical
+and Open Graph URLs and `sitemap.xml` as described above.
 
 ## Adjust typography and colors
 
@@ -160,6 +167,6 @@ When opening HTML files directly from disk, some browsers do not share saved pre
 
 ## Publishing later
 
-The six root HTML files and their shared CSS, JavaScript, favicon, and assets are the complete website. GitHub Pages publishes them at `https://asmith.be/` from the root of `main`. Keep the HTML files, `style.css`, `theme.js`, `favicon.svg`, and `assets/` together. The `.openai` folder is reserved for the Sites preview and is not needed for manual editing or GitHub Pages.
+The six root HTML files and their shared CSS, JavaScript, favicon, and assets are the complete website. GitHub Pages publishes them at `https://asmith.be/` from the root of `main`. Keep the HTML files, `style.css`, `theme.js`, `favicon.svg`, and `assets/` together.
 
 Saving a local file updates your local preview. Submit edits on a branch and review the pull request before merging into `main`; the existing Pages configuration publishes `main`. Keep the compatibility directories and existing `/s/` PDFs. See README.md for the publishing configuration and legacy-source warning.

@@ -25,7 +25,8 @@ repository maintenance must preserve `CNAME` and must not change DNS.
 The previous implementation's `_src/`, `assets/site.css`, `assets/site.js`,
 `assets/images/`, and `assets/favicon.svg` remain for reference. **Do not run
 `_src/build.py`**: it generates the previous design and would overwrite the new
-homepage and compatibility pages. The prototype HTML is now the source of truth.
+homepage and compatibility pages. A guard now refuses to run while the current
+site's `theme.js` is present. The prototype HTML is the source of truth.
 
 Navigation, downloads, and the portrait work without JavaScript. The appearance
 and text-size controls store preferences only in the visitor's browser.
@@ -80,8 +81,8 @@ The prototype's wording, layout, photographs, and credits are retained. Review:
 - The CV current **as of August 2026** and the PhD date.
 - Email **alsmit10@illinois.edu**, office **202A Gregory Hall**, and the mailing
   address **200 Gregory Hall, MC-468, 810 S. Wright St., Urbana, IL 61801**.
-- The prototype links to **photos.asmith.be**. The hostname did not resolve
-  during validation; review this link before relying on it as a gallery.
+- The prototype links to **photos.asmith.be**. The gallery responded successfully
+  during the technical audit; some automated clients receive access restrictions.
 - Instagram profile contents could not be independently confirmed because the
   service restricted automated access.
 
