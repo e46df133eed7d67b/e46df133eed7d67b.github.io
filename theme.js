@@ -39,6 +39,9 @@
     const slider = document.getElementById("text-size");
     if (slider) {
       slider.value = textSize;
+      // Preserve the native filled-track feedback with the explicit range styling.
+      const position = (textSize - Number(slider.min)) / (Number(slider.max) - Number(slider.min));
+      slider.style.setProperty("--range-position", position);
       slider.setAttribute("aria-valuetext", textSize + "% of default text size");
     }
   }
