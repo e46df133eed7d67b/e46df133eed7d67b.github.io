@@ -62,7 +62,7 @@ form.
 | `/photography` | `/photography.html` |
 | `/contact-info` | `/contact.html` |
 
-All five existing PDF files under `/s/` are preserved byte for byte:
+All five existing PDF URLs under `/s/` remain available:
 
 - `/s/SMITH-PRIMARY-2026.pdf`
 - `/s/CV-Aug-2026-no-cell.pdf`
@@ -78,7 +78,7 @@ are retained. The existing `.nojekyll` is preserved.
 The prototype's wording, layout, photographs, and credits are retained. Review:
 
 - The publication marked **forthcoming**.
-- The CV current **as of August 2026** and the PhD date.
+- The PhD date (August 2026). The downloadable CV was updated to October 2026.
 - Email **alsmit10@illinois.edu**, office **202A Gregory Hall**, and the mailing
   address **200 Gregory Hall, MC-468, 810 S. Wright St., Urbana, IL 61801**.
 - The prototype links to **photos.asmith.be**. The gallery responded successfully
