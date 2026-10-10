@@ -70,6 +70,9 @@ All five existing PDF URLs under `/s/` remain available:
 - `/s/Introduction-to-Ethics-FA24.pdf`
 - `/s/Phil-2310-Spring-2014-Syllabus.pdf`
 
+The current CV download is `assets/cv-october-2026.pdf`. The previous
+`assets/cv-august-2026.pdf` URL remains available for existing bookmarks.
+
 The prototype also includes its own PDF filenames under `/assets/`; those links
 are retained. The existing `.nojekyll` is preserved.
 
