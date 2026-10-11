@@ -78,10 +78,14 @@ are retained. The existing `.nojekyll` is preserved.
 
 ## Content review notes
 
-The prototype's wording, layout, photographs, and credits are retained. Review:
+The prototype's wording, layout, photographs, and credits are retained.
+
+The downloadable CV is current as of October 2026, and the PhD date is confirmed
+as August 2026. These items are resolved.
+
+Remaining review notes:
 
 - The publication marked **forthcoming**.
-- The PhD date (August 2026). The downloadable CV was updated to October 2026.
 - Email **alsmit10@illinois.edu**, office **202A Gregory Hall**, and the mailing
   address **200 Gregory Hall, MC-468, 810 S. Wright St., Urbana, IL 61801**.
 - The prototype links to **photos.asmith.be**. The gallery responded successfully
