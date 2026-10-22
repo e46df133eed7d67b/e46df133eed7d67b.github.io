@@ -1,0 +1,157 @@
+/* No changes to Quarto's default font, spacing, or width until selected. */
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-BoldItalic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+html[data-reading-font="serif"] body {
+  --bs-body-font-family: Georgia, "Times New Roman", serif;
+}
+html[data-reading-font="atkinson"] body {
+  --bs-body-font-family: "Atkinson Hyperlegible", var(--bs-font-sans-serif);
+}
+html[data-reading-spacing="compact"] body { --bs-body-line-height: 1.35; }
+html[data-reading-spacing="spacious"] body { --bs-body-line-height: 1.8; }
+
+/* Bootstrap supplies the dark palette. These Quarto TOC colors are static. */
+html[data-bs-theme="dark"] #TOC a.active,
+html[data-bs-theme="dark"] #TOC a:hover {
+  color: var(--bs-link-color) !important;
+  border-left-color: var(--bs-link-color);
+}
+html[data-bs-theme="dark"] h2 {
+  border-bottom-color: var(--bs-border-color);
+}
+
+/* Retain Quarto's grid and TOC; change only the requested reading measure. */
+@media (min-width: 768px) {
+  html[data-reading-width="narrow"] #quarto-document-content {
+    width: 100%;
+    max-width: 80%;
+    justify-self: center;
+  }
+  html[data-reading-width="wide"] #quarto-document-content {
+    grid-column: page-start / body-content-end;
+  }
+}
+
+/* Long URLs must reflow, including at large text sizes on phones. */
+#quarto-document-content { min-width: 0; overflow-wrap: anywhere; }
+
+#reading-preferences {
+  margin-block: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+#reading-preferences summary {
+  cursor: pointer;
+  width: fit-content;
+  padding-block: 0.4rem;
+  color: var(--bs-body-color);
+}
+.reading-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: 1rem;
+  margin-block: 0.75rem;
+}
+.reading-control { min-width: 0; border: 0; padding: 0; margin: 0; }
+.reading-control legend {
+  float: none;
+  width: auto;
+  font-size: inherit;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  padding: 0;
+}
+.reading-size-control { grid-column: 1 / -1; }
+.reading-size-row { display: flex; align-items: center; gap: 0.6rem; }
+.reading-size-row span { flex-shrink: 0; }
+#reading-size { width: 100%; min-width: 0; min-height: 2.5rem; accent-color: var(--bs-body-color); }
+.reading-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 4.5rem), 1fr));
+  gap: 0.4rem;
+}
+.reading-option { position: relative; min-width: 0; cursor: pointer; }
+.reading-option input {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  margin: 0;
+  accent-color: var(--bs-body-color);
+}
+.reading-option-face {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  height: 100%;
+  padding: 1.25rem 0.3rem 0.45rem;
+  border: 2px solid var(--bs-border-color);
+  border-radius: 0.2rem;
+  background: var(--bs-body-bg);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.reading-option input:checked + .reading-option-face {
+  border-color: currentColor;
+  background: var(--bs-tertiary-bg);
+}
+/* WebKit can focus radios after arrow keys without matching :focus-visible. */
+.reading-option input:focus + .reading-option-face {
+  outline: 2px solid var(--bs-link-color);
+  outline-offset: 3px;
+}
+.reading-preview { width: 3.5rem; height: 2.5rem; flex-shrink: 0; }
+svg.reading-preview { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+span.reading-preview { display: grid; place-items: center; font-size: 2rem; line-height: 1; font-weight: 400; }
+.reading-sample-sans { font-family: var(--bs-font-sans-serif); }
+.reading-sample-serif { font-family: Georgia, "Times New Roman", serif; }
+/* Closed panels do not apply this optional font to their hidden preview. */
+#reading-preferences[open] .reading-sample-atkinson { font-family: "Atkinson Hyperlegible", var(--bs-font-sans-serif); }
+#reading-preferences button {
+  font: inherit;
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.2rem;
+  padding: 0.35rem 0.5rem;
+  min-height: 2.5rem;
+}
+#reading-preferences :focus-visible { outline: 2px solid var(--bs-link-color); outline-offset: 3px; }
+#reading-preferences p { margin-block: 0.5rem; }
+#reading-font-status:empty { display: none; }
+@media (forced-colors: active) {
+  .reading-option-face { border-color: ButtonBorder; }
+  .reading-option input:checked + .reading-option-face { border-color: Highlight; border-style: double; }
+  .reading-option input:focus + .reading-option-face { outline-color: Highlight; }
+}
+@media print { #reading-preferences { display: none; } }
